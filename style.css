@@ -1,16 +1,8 @@
-* {
-    margin: 0;
-    padding: 0;
-}
+html,
 body {
-    background-color: #1E1E1E;
-}
-
-hr { 
-    width: 100%;
-    size: 1px;
-    box-sizing: border-box;
-    border-bottom-width: 0px;
+  height: 100%;
+  margin: 0;
+  background-color: #1E1E1E;
 }
 
 h1 {
@@ -18,4 +10,26 @@ h1 {
     margin: 1em;
     text-transform: uppercase;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+hr { 
+    width: 100%;
+    size: 1px;
+    box-sizing: border-box;
+    margin: 0;
+    border-bottom-width: 0px;
+}
+
+main {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+main header {
+  flex: 0 1 auto;
+}
+
+main #sortingCanvas {
+  flex: 1 1 auto;
 }
