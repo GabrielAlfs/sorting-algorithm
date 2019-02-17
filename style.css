@@ -33,3 +33,13 @@ main header {
 main #sortingCanvas {
   flex: 1 1 auto;
 }
+
+.selected {
+    fill: #DE9E73;
+}
+.sorting {
+    fill: #3498DB;
+}
+.done {
+    fill: #21618C;
+}
