@@ -21,3 +21,28 @@ function createSvgRect(x, y, width, height) {
     svg.appendChild(newRect);
     rects.push(newRect);
 }
+
+function shuffle(vetor) {
+    for (let i = 1; i < vetor.length+1; i++) {
+        rects[i].setAttribute('class', 'sorting');
+        setTimeout(function(){
+            var rand = Math.floor(Math.random() * (i));
+            swap(vetor, rand, i - 1);
+        }, i*10);
+    }
+}
+
+function swap(vetor, i, j) {
+    var temp = vetor[i];
+    vetor[i] = vetor[j];
+    vetor[j] = temp;
+    swapSvgRects(rects[i], rects[j]);
+}
+
+function swapSvgRects(firstRect, secondRect) {
+    var tempAttr = [firstRect.getAttribute('y'), firstRect.getAttribute('height')];
+    firstRect.setAttribute('y', secondRect.getAttribute('y'));
+    firstRect.setAttribute('height', secondRect.getAttribute('height'));
+    secondRect.setAttribute('y', tempAttr[0]);
+    secondRect.setAttribute('height', tempAttr[1]);
+}
