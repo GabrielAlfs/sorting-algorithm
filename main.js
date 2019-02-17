@@ -46,3 +46,19 @@ function swapSvgRects(firstRect, secondRect) {
     secondRect.setAttribute('y', tempAttr[0]);
     secondRect.setAttribute('height', tempAttr[1]);
 }
+
+function bubbleSort(vetor) {
+    var sleepTime = 0;
+    for (let j = 0; j < vetor.length; j++) {
+        for (let i = 0; i < vetor.length-j-1; i++) {
+            sleepTime++;
+            setTimeout(function(){
+                rects[i].setAttribute('class', 'sorting');
+                rects[i + 1].setAttribute('class', 'selected');
+                if (vetor[i] > vetor[i + 1]) swap(vetor, i, i + 1);
+                if (i == vetor.length-j-2) rects[vetor.length-j-1].setAttribute('class', 'done');
+                if (vetor.length-j-2 == 0) rects[0].setAttribute('class', 'done');
+            }, sleepTime*5);
+        }
+    }
+}
