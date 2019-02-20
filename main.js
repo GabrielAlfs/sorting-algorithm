@@ -23,11 +23,10 @@ function createSvgRect(x, y, width, height) {
 }
 
 function shuffle(vetor) {
-    for (let i = 1; i < vetor.length+1; i++) {
+    for (let i = 0; i < vetor.length; i++) {
         rects[i].setAttribute('class', 'sorting');
         setTimeout(function(){
-            var rand = Math.floor(Math.random() * (i));
-            swap(vetor, rand, i - 1);
+            swap(vetor, i, Math.floor(Math.random() * i));
         }, i*10);
     }
 }
